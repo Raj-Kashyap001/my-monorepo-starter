@@ -3,7 +3,15 @@ import { CreateTodoType, Todo, UpdateTodoType } from './todo.schema';
 
 @Injectable()
 export class TodosService {
-  private todos: Array<Todo> = [];
+  private todos: Array<Todo> = [
+    {
+      id: crypto.randomUUID(),
+      name: 'Hello This is First!',
+      description: 'What is this?',
+      completed: false,
+      craetedAt: Date.now().toLocaleString(),
+    },
+  ];
 
   public getAllTodos() {
     return this.todos;
