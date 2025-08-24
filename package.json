@@ -20,5 +20,9 @@
   "workspaces": [
     "apps/*",
     "packages/*"
+  ],
+  "trustedDependencies": [
+    "@nestjs/core",
+    "@swc/core"
   ]
 }
