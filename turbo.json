@@ -3,10 +3,12 @@
   "ui": "tui",
   "tasks": {
     "build": {
+      "env": ["TRPC_URL"],
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
+
     "lint": {
       "dependsOn": ["^lint"]
     },
