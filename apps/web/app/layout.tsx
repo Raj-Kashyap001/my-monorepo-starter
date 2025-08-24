@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import TrpcProvider from "./providers/trpc-provider";
+import { TrpcLocalProvider } from "./providers/trpc-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <TrpcProvider>{children}</TrpcProvider>
+        <TrpcLocalProvider>{children}</TrpcLocalProvider>
       </body>
     </html>
   );
