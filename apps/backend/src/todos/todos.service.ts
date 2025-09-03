@@ -44,11 +44,22 @@ export class TodosService {
   }
 
   public deleteById(id: string) {
+    console.log('Attempting to delete todo with ID:', id); // ✅ Add debugging
+    console.log(
+      'Current todos:',
+      this.todos.map((t) => t.id),
+    ); // ✅ Show current IDs
+
     const idx = this.todos.findIndex((t: Todo) => t.id === id);
+    console.log('Found index:', idx); // ✅ Debug the index
+
     if (idx === -1) throw new NotFoundException('Todo Not Found!');
 
     this.todos.splice(idx, 1);
-
+    console.log(
+      'Todo deleted successfully. Remaining todos:',
+      this.todos.length,
+    ); // ✅ Confirm deletion
     return true;
   }
 }

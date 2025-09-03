@@ -32,7 +32,7 @@ export class TodoRouter {
   }
 
   @Mutation({ input: z.string(), output: z.boolean() })
-  deleteTodo(@Input('id') id: string) {
+  deleteTodo(@Input() id: string) {
     return this.todoService.deleteById(id);
   }
 }
